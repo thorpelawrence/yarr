@@ -2,7 +2,7 @@ package storage
 
 import (
 	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 type Storage struct {
@@ -10,7 +10,7 @@ type Storage struct {
 }
 
 func New(path string) (*Storage, error) {
-	db, err := sql.Open("sqlite3", path)
+	db, err := sql.Open("sqlite", path)
 	if err != nil {
 		return nil, err
 	}
