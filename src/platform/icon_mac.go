@@ -5,5 +5,5 @@ package platform
 
 import _ "embed"
 
-//go:embed icon.png
+//go:embed icon-white.png
 var Icon []byte
