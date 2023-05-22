@@ -87,7 +87,7 @@ func (s *Storage) CreateItems(items []Item) bool {
 			)
 			values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 			on conflict (feed_id, guid) do nothing`,
-			item.GUID, item.FeedId, item.Title, item.Link, item.Date.UTC(),
+			item.GUID, item.FeedId, item.Title, item.Link, item.Date.Format(time.RFC3339),
 			item.Content, item.ImageURL, item.AudioURL,
 			now, UNREAD,
 		)
